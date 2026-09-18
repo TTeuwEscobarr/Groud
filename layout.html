@@ -1,0 +1,552 @@
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GROUD Games — Mídia Digital, Chaves e Gift Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080c; --bg2:#0c0e14; --card:#111319; --card2:#161922; --line:#23262f;
+  --txt:#f2f3f5; --mut:#9aa0ac; --or:#ff7a00; --or2:#ffab3d; --or-dk:#c25200;
+  --rad:14px; --max:1440px;
+}
+:root:not([data-theme="light"]){color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3,.dsp{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(7,8,12,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:14px;height:66px}
+.burger{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;gap:4px;cursor:pointer;flex-shrink:0}
+.burger span{display:block;width:16px;height:2px;background:var(--txt);border-radius:2px}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0}
+.logo .mark{width:36px;height:36px;overflow:visible;filter:drop-shadow(0 3px 10px rgba(255,122,0,.35))}
+.logo b{font-family:Archivo;font-weight:900;font-size:21px;letter-spacing:-.04em}
+.logo b i{font-style:normal;color:var(--or)}
+.logo small{display:block;font-size:8px;letter-spacing:.42em;color:var(--mut);margin-top:-2px}
+nav{display:flex;gap:4px;margin-left:8px}
+nav a{padding:9px 15px;border-radius:9px;font-size:14px;font-weight:500;color:var(--mut);transition:.18s}
+nav a:hover{color:var(--txt);background:var(--card2)}
+nav a.on{background:#fff;color:#0b0c10;font-weight:600}
+.search{flex:1;position:relative;max-width:520px;margin:0 auto}
+.search input{width:100%;height:44px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--txt);padding:0 18px 0 46px;font-size:14px;outline:none;transition:.2s}
+.search input:focus{border-color:var(--or);box-shadow:0 0 0 3px rgba(255,122,0,.14)}
+.search svg{position:absolute;left:16px;top:13px;stroke:var(--or)}
+.acts{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--txt);transition:.18s;white-space:nowrap}
+.btn:hover{border-color:#3a3e4a}
+.btn.pri{background:linear-gradient(135deg,var(--or2),var(--or));color:#14100a;border:none;box-shadow:0 6px 20px rgba(255,122,0,.25)}
+.btn.pri:hover{filter:brightness(1.07)}
+/* SUPORTE */
+.sup{position:relative;flex-shrink:0}
+.sup .btn.on{border-color:var(--or);color:var(--or)}
+.sup-menu{position:absolute;top:50px;right:0;min-width:220px;background:rgba(13,15,21,.98);border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.6);padding:8px;display:none;z-index:60}
+.sup.open .sup-menu{display:block}
+.sup-menu a{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:10px;font-size:14px;font-weight:500;color:var(--txt);transition:.16s}
+.sup-menu a:hover{background:var(--card2)}
+.sup-menu a .ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:16px;flex-shrink:0}
+.sup-menu a small{display:block;font-size:11px;color:var(--mut);font-weight:400;margin-top:1px}
+.ic.wa{background:rgba(37,211,102,.16);color:#25d363}
+.ic.dc{background:rgba(88,101,242,.18);color:#5865f2}
+.ic.fb{background:rgba(24,119,242,.16);color:#1877f2}
+.ic.ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#bc1888);color:#fff}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.25fr 1.25fr 1fr;gap:18px;padding:26px 0 8px}
+.bn{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);cursor:pointer;transition:.25s}
+.bn:hover{transform:translateY(-4px);border-color:var(--or);box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.bn .art{position:absolute;inset:0;background-size:cover!important;background-position:center!important}
+.bn::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 8%,transparent 55%)}
+.tag{position:absolute;top:12px;left:12px;z-index:3;display:flex;align-items:center;gap:6px;background:#fff;color:#0b0c10;font-size:10px;font-weight:700;letter-spacing:.1em;padding:5px 10px;border-radius:7px}
+.bn .pr{position:absolute;z-index:3;left:16px;bottom:16px;display:flex;align-items:center;gap:10px}
+.old{color:#b9bcc4;text-decoration:line-through;font-size:14px}
+.new{font-family:Archivo;font-weight:800;font-size:25px}
+.buy{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#14100a;font-weight:800;padding:9px 16px;border-radius:10px;font-size:16px}
+
+/* SECOES */
+.ttl{text-align:center;font-size:32px;margin:42px 0 24px}
+.cats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.cat{height:64px;border-radius:14px;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:16px;border:1px solid var(--line);background:var(--card);cursor:pointer;transition:.2s}
+.cat:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(0,0,0,.5)}
+.cat.ps{background:#fff;color:#0b0c10;border:none}
+.cat.xb{background:#0e7a0e;border:none}
+.cat.sw{background:#d81f26;border:none}
+.cat.st{background:#1b2838;border-color:#2a3a4d}
+.cat.gc{background:linear-gradient(135deg,#2a1a08,#1a1206);border-color:#4a3316;color:var(--or2)}
+.cat.sr{background:var(--card2)}
+
+.layout{display:grid;grid-template-columns:200px 1fr;gap:22px;margin-top:38px;align-items:start}
+aside{position:sticky;top:82px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:7px}
+aside a{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:700;padding:11px 13px;border-radius:9px;background:linear-gradient(180deg,#1d1810,#15120c);border:1px solid #3a2c14;color:#f0d9b8;transition:.18s}
+aside a:hover{border-color:var(--or);color:#fff;background:linear-gradient(180deg,#2a1f0f,#1a1409)}
+.srow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;border-radius:14px;background:linear-gradient(90deg,rgba(255,122,0,.13),rgba(255,122,0,0));border:1px solid var(--line);border-left:3px solid var(--or);margin-bottom:18px}
+.srow h3{font-size:17px;display:flex;align-items:center;gap:10px}
+.more{font-size:12px;font-weight:700;padding:8px 14px;border-radius:9px;border:1px solid var(--line);background:var(--card2);color:var(--mut)}
+.more:hover{color:var(--or);border-color:var(--or)}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:.22s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-5px);border-color:var(--or);box-shadow:0 16px 34px rgba(0,0,0,.55)}
+.pc .plat{display:flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:#0b0c10;font-size:10.5px;font-weight:700;letter-spacing:.1em;padding:7px}
+.pc.stm .plat{background:#1b2838;color:#c7d5e0}
+.pc .art{aspect-ratio:3/4;position:relative;overflow:hidden}
+.pc .art b{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:14px;font-family:Archivo;font-weight:900;font-size:19px;line-height:1.1;text-shadow:0 3px 14px rgba(0,0,0,.7)}
+.disc{position:absolute;top:8px;right:8px;background:var(--or);color:#14100a;font-size:11px;font-weight:800;padding:3px 8px;border-radius:6px;z-index:2}
+.pc .ft{display:flex;align-items:center;justify-content:space-between;padding:12px 12px 14px;gap:8px;margin-top:auto}
+.pc .ft .v{font-family:Archivo;font-weight:800;font-size:16px}
+.pc .ft .v s{display:block;font-family:Inter;font-weight:400;font-size:11px;color:var(--mut)}
+.add{width:34px;height:34px;border-radius:9px;background:rgba(255,122,0,.12);border:1px solid var(--or-dk);color:var(--or2);display:grid;place-items:center;flex-shrink:0;font-size:17px;font-weight:700}
+.pc:hover .add{background:var(--or);color:#14100a;border-color:var(--or)}
+
+/* FAIXAS */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:44px 0}
+.f{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;gap:13px;align-items:flex-start}
+.f i{font-style:normal;font-size:22px}
+.f h4{font-size:14px;margin-bottom:4px}
+.f p{font-size:12px;color:var(--mut);line-height:1.5}
+
+footer{border-top:1px solid var(--line);background:var(--bg2);margin-top:50px;padding:44px 0 26px}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px}
+footer p{font-size:12.5px;color:var(--mut);line-height:1.7}
+footer h5{font-size:13px;margin-bottom:14px;color:var(--or2);letter-spacing:.06em;text-transform:uppercase}
+footer li{list-style:none;font-size:12.5px;color:var(--mut);padding:5px 0;cursor:pointer}
+footer li:hover{color:var(--or)}
+.cp{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12px;color:#6d727d}
+.chat{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--or2),var(--or));display:grid;place-items:center;box-shadow:0 10px 30px rgba(255,122,0,.35);cursor:pointer;z-index:60}
+@media(max-width:1100px){.hero,.grid{grid-template-columns:repeat(2,1fr)}.cats{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}aside{position:static;flex-direction:row;flex-wrap:wrap}.strip,.fg{grid-template-columns:repeat(2,1fr)}nav,.search{display:none}}
+@media(max-width:620px){.hero,.grid,.cats,.strip,.fg{grid-template-columns:1fr 1fr}.ttl{font-size:24px}}
+/* DRAWER MOBILE */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.62);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:.25s;z-index:90}
+.ov.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(388px,87vw);background:linear-gradient(180deg,#0b0c11,#07080c);border-left:1px solid var(--line);box-shadow:-20px 0 60px rgba(0,0,0,.6);transform:translateX(102%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:95;overflow-y:auto;padding:18px 18px 44px}
+.drawer.open{transform:translateX(0)}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.dh .l{display:flex;align-items:center;gap:9px}
+.dh .l b{font-family:Archivo;font-weight:900;font-size:18px;letter-spacing:-.04em}
+.dh .l i{font-style:normal;color:var(--or)}
+.dh .l small{display:block;font-size:8px;letter-spacing:.42em;color:var(--mut);margin-top:-2px}
+.dclose{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);cursor:pointer;font-size:16px}
+.dsec{margin-bottom:24px}
+.dsec h6{font-size:13px;font-weight:700;color:#fff;margin-bottom:13px;letter-spacing:.02em;text-align:center}
+.dqa{display:flex;flex-direction:column;gap:9px}
+.dqa a{display:flex;align-items:center;gap:11px;height:48px;border-radius:12px;border:1px solid #d4af37;background:rgba(212,175,55,.06);color:#f0d9b8;font-size:15px;font-weight:600;padding:0 16px;transition:.18s;cursor:pointer}
+.dqa a:hover{background:rgba(212,175,55,.16);color:#fff}
+.dqa a .ic{font-size:17px;width:22px;text-align:center}
+.dcats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.dcats a{display:flex;align-items:center;justify-content:center;gap:8px;height:50px;border-radius:12px;font-size:14px;font-weight:700;transition:.16s;cursor:pointer}
+.dcats .ps{background:#e9eaed;color:#0b0c10}
+.dcats .xb{background:#1e7e1e;color:#fff}
+.dcats .nt{background:#e60012;color:#fff}
+.dcats .st{background:#17202a;color:#fff}
+.dcats .sr{background:#161226;color:#fff}
+.dcats .gc,.dcats .so{grid-column:1/-1;background:#0b0c10;border:1px solid #d4af37;color:#d4af57}
+.dcats a:hover{filter:brightness(1.09)}
+.dsoc{display:flex;flex-direction:column;gap:10px}
+.dsoc a{display:flex;align-items:center;gap:12px;height:54px;border-radius:12px;background:var(--card);border:1px solid var(--line);border-left-width:5px;padding:0 16px;font-size:15px;font-weight:600;color:var(--txt);transition:.18s}
+.dsoc a:hover{background:var(--card2)}
+.dsoc a.wa{border-left-color:#25d366}
+.dsoc a.ig{border-left-color:#e1306c}
+.dsoc a.dc{border-left-color:#5865f2}
+.dsoc a .ic{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;font-size:16px;flex-shrink:0;color:#fff}
+.dsoc a.wa .ic{background:linear-gradient(135deg,#25d366,#0f9d58)}
+.dsoc a.ig .ic{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4)}
+.dsoc a.dc .ic{background:linear-gradient(135deg,#5865f2,#404eed)}
+.dsoc a small{display:block;font-size:11px;color:var(--mut);font-weight:400;margin-top:1px}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap bar">
+  <div class="burger"><span></span><span></span><span></span></div>
+  <a class="logo"><svg class="mark" viewBox="-6 -6 112 112"><path d="M90 27 L50 4 L10 27 L10 73 L50 96 L90 73 L90 50 L58 50" fill="none" stroke="url(#gg)" stroke-width="18"/><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffab3d"/><stop offset="1" stop-color="#ff7a00"/></linearGradient></defs></svg><div><b>GRO<i>U</i>D</b><small>GAMES</small></div></a>
+  <nav><a class="on" data-cat="all">Loja</a><a data-cat="ps">PlayStation</a><a data-cat="xb">Xbox</a><a data-cat="nt">Switch</a><a data-cat="st">Steam</a></nav>
+  <div class="search">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+    <input placeholder="Buscar jogos, chaves, gift cards...">
+  </div>
+  <div class="acts">
+    <div class="sup" id="sup">
+      <button class="btn" id="supBtn" type="button">💬 Suporte</button>
+      <div class="sup-menu">
+        <a href="https://wa.me/558892363311?text=Ol%C3%A1%20aqui%20%C3%A9%20do%20suporte%20Groud%20Gamers%2C%20como%20posso%20te%20ajudar" target="_blank" rel="noopener"><span class="ic wa">🟢</span><div>WhatsApp<small>Resposta rápida</small></div></a>
+        <a href="https://discord.gg/groud" target="_blank" rel="noopener"><span class="ic dc">🎮</span><div>Discord<small>Comunidade & suporte</small></div></a>
+        <a href="https://facebook.com/groudgames" target="_blank" rel="noopener"><span class="ic fb">📘</span><div>Facebook<small>Novidades & promoções</small></div></a>
+        <a href="https://www.instagram.com/egroud_?stkn=NnJvc3liNmVmeGxw" target="_blank" rel="noopener"><span class="ic ig">📸</span><div>Instagram<small>Bastidores & ofertas</small></div></a>
+      </div>
+    </div>
+    <button class="btn">👤 Entrar</button>
+
+    
+    <button class="btn pri">🛒 Carrinho</button>
+  </div>
+</div>
+</header>
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh">
+    <div class="l"><svg class="mark" viewBox="-6 -6 112 112" width="30" height="30"><path d="M90 27 L50 4 L10 27 L10 73 L50 96 L90 73 L90 50 L58 50" fill="none" stroke="url(#gg)" stroke-width="18"/></svg><div><b>GRO<i>U</i>D</b><small>GAMES</small></div></div>
+    <button class="dclose" id="dclose" aria-label="Fechar menu">✕</button>
+  </div>
+  <div class="dsec">
+    <h6>Acesso rápido</h6>
+    <div class="dqa">
+      <a data-go="top"><span class="ic">🏠</span>Início</a>
+      <a data-go="cart"><span class="ic">🛒</span>Carrinho</a>
+      <a data-go="login"><span class="ic">👤</span>Entrar</a>
+    </div>
+  </div>
+  <div class="dsec">
+    <h6>Categorias</h6>
+    <div class="dcats">
+      <a class="ps" data-cat="ps">🎮 PlayStation</a>
+      <a class="xb" data-cat="xb">�� Xbox</a>
+      <a class="nt" data-cat="nt">🔴 Nintendo</a>
+      <a class="st" data-cat="st">💨 Steam</a>
+      <a class="sr" data-cat="sr">📺 Streaming</a>
+      <a class="gc" data-cat="gc">🎁 Gift Card</a>
+      <a class="so" data-cat="so">🏆 Sorteios</a>
+    </div>
+  </div>
+  <div class="dsec">
+    <h6>Redes sociais</h6>
+    <div class="dsoc">
+      <a class="wa" href="https://wa.me/558892363311?text=Ol%C3%A1%20aqui%20%C3%A9%20do%20suporte%20Groud%20Gamers%2C%20como%20posso%20te%20ajudar" target="_blank" rel="noopener"><span class="ic">🟢</span><div>WhatsApp<small>Resposta rápida</small></div></a>
+      <a class="ig" href="https://instagram.com/groudgames" target="_blank" rel="noopener"><span class="ic">📸</span><div>Instagram<small>Bastidores & ofertas</small></div></a>
+      <a class="dc" href="" target="_blank" rel="noopener"><span class="ic">🎮</span><div>Discord<small>Comunidade & suporte</small></div></a>
+    </div>
+  </div>
+</aside>
+
+<main class="wrap">
+  <section class="hero" id="hero"></section>
+
+  <h2 class="ttl">O que você procura?</h2>
+  <div class="cats">
+    <div class="cat ps" data-cat="ps">🎮 PlayStation</div><div class="cat xb" data-cat="xb">🎮 Xbox</div><div class="cat sw" data-cat="nt">🔴 Switch</div>
+    <div class="cat st" data-cat="st">💨 Steam</div><div class="cat gc" data-cat="gc">🎁 Gift Cards</div><div class="cat sr" data-cat="sr">📺 Streaming</div>
+  </div>
+
+  <div class="layout">
+    <aside>
+      <a>Mídia Digital PS5/PS4</a><a>Chaves Steam Glo… <span>⌄</span></a><a>Chaves Aleatórias Stea…</a>
+      <a>Mídia Digital Xbox</a><a>Mídia Primária Xbox</a><a>Mídia Digital Nintendo</a>
+      <a>Streamings</a><a>Assinaturas <span>⌄</span></a><a>Emulador PC</a><a>Sorteios</a>
+    </aside>
+    <div>
+      <div class="srow"><h3>🎮 Mídia Digital PS5/PS4</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g1"></div>
+
+      <div class="srow" style="margin-top:38px"><h3>💨 Chaves Steam Global</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g2"></div>
+
+      <div class="srow" style="margin-top:38px"><h3>🎁 Gift Cards &amp; Assinaturas</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g3"></div>
+
+      <div class="srow" style="margin-top:38px"><h3>🟢 Jogos Xbox</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g4"></div>
+
+      <div class="srow" style="margin-top:38px"><h3>🔴 Nintendo Switch</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g5"></div>
+
+      <div class="srow" style="margin-top:38px"><h3>📺 Streaming</h3><a class="more">Ver mais ↗</a></div>
+      <div class="grid" id="g6"></div>
+    </div>
+  </div>
+
+  <section class="strip">
+    <div class="f"><i>⚡</i><div><h4>Entrega automática</h4><p>Receba sua chave ou acesso em até 5 minutos após a confirmação do pagamento.</p></div></div>
+    <div class="f"><i>🔒</i><div><h4>Compra 100% segura</h4><p>Pagamento via Pix, cartão e boleto com criptografia e antifraude.</p></div></div>
+    <div class="f"><i>🏷️</i><div><h4>Compre mais, pague menos</h4><p>2 itens 5% OFF · 3 itens 10% OFF · 4 itens 15% OFF · 5 itens 20% OFF.</p></div></div>
+    <div class="f"><i>💬</i><div><h4>Suporte todo dia</h4><p>Atendimento humano no chat e no WhatsApp das 9h à meia-noite.</p></div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap fg">
+    <div>
+      <a class="logo" style="margin-bottom:14px"><svg class="mark" viewBox="-6 -6 112 112"><path d="M90 27 L50 4 L10 27 L10 73 L50 96 L90 73 L90 50 L58 50" fill="none" stroke="url(#gg)" stroke-width="18"/><defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffab3d"/><stop offset="1" stop-color="#ff7a00"/></linearGradient></defs></svg><div><b>GRO<i>U</i>D</b><small>GAMES</small></div></a>
+      <p>A GROUD Games é uma loja digital de jogos, chaves, gift cards e assinaturas para PlayStation, Xbox, Nintendo Switch e PC. Preços baixos, entrega imediata e garantia em todos os pedidos.</p>
+    </div>
+    <div><h5>Loja</h5><ul><li>Mídia Digital PS5/PS4</li><li>Mídia Digital Xbox</li><li>Nintendo Switch</li><li>Chaves Steam</li><li>Gift Cards</li></ul></div>
+    <div><h5>Ajuda</h5><ul><li>Como comprar</li><li>Prazo de entrega</li><li>Trocas e reembolso</li><li>Perguntas frequentes</li><li>Fale conosco</li></ul></div>
+    <div><h5>Pagamento</h5><ul><li>Pix (5% OFF)</li><li>Cartão em até 12x</li><li>Boleto bancário</li><li>Carteira GROUD</li></ul></div>
+  </div>
+  <div class="wrap cp"><span>© 2026 GROUD Games — CNPJ 00.000.000/0001-00</span><span>Termos de uso · Privacidade · Trocas</span></div>
+</footer>
+<div class="chat">💬</div>
+
+<script>
+/* ---------- CSS dinâmico: modal, drawer, toast, specs ---------- */
+document.head.insertAdjacentHTML('beforeend',`<style>
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);z-index:80;opacity:0;pointer-events:none;transition:.25s}
+.ov.on{opacity:1;pointer-events:auto}
+.mdl{position:fixed;z-index:90;inset:auto;left:50%;top:50%;transform:translate(-50%,-46%) scale(.97);width:min(1080px,94vw);max-height:90vh;overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:20px;opacity:0;pointer-events:none;transition:.25s}
+.mdl.on{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1)}
+.mdl .x,.dw .x{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:18px;cursor:pointer;z-index:5}
+.mb{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;padding:24px}
+.shot{aspect-ratio:16/9;border-radius:14px;position:relative;display:grid;place-items:center;font-family:Archivo;font-weight:900;font-size:34px;text-align:center;text-shadow:0 4px 20px #000;padding:20px}
+.thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:10px}
+.thumbs div{aspect-ratio:16/10;border-radius:8px;border:2px solid transparent;cursor:pointer;opacity:.6}
+.thumbs div.sel{border-color:var(--or);opacity:1}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+.box h4{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+select{width:100%;height:46px;border-radius:11px;background:var(--card2);color:var(--txt);border:1px solid var(--line);padding:0 12px;font-size:14px;outline:none}
+select:focus{border-color:var(--or)}
+.pbig{font-family:Archivo;font-weight:900;font-size:30px;margin-top:6px}
+.pill{display:inline-block;background:rgba(255,122,0,.14);border:1px solid var(--or-dk);color:var(--or2);font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;margin:0 6px 6px 0}
+.acc{border-top:1px solid var(--line)}
+.acc button{width:100%;background:none;border:none;color:var(--txt);text-align:left;padding:13px 0;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between}
+.acc p{display:none;font-size:12.5px;color:var(--mut);line-height:1.6;padding-bottom:13px}
+.acc.open p{display:block}
+.dw{position:fixed;top:0;right:0;bottom:0;width:min(410px,92vw);background:var(--bg2);border-left:1px solid var(--line);z-index:90;transform:translateX(104%);transition:.3s;display:flex;flex-direction:column}
+.dw.on{transform:none}
+.dw header{padding:20px;border-bottom:1px solid var(--line);font-family:Archivo;font-weight:800;font-size:18px}
+.dw .body{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.ci{display:flex;gap:11px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+.ci .th{width:44px;height:58px;border-radius:7px;flex-shrink:0}
+.ci b{font-size:13px;display:block}
+.ci small{color:var(--mut);font-size:11.5px}
+.qt{display:flex;align-items:center;gap:6px;margin-left:auto}
+.qt button{width:26px;height:26px;border-radius:7px;background:var(--card2);border:1px solid var(--line);color:var(--txt);cursor:pointer}
+.dw footer{padding:18px;border-top:1px solid var(--line);background:var(--bg)}
+.ln{display:flex;justify-content:space-between;font-size:13px;color:var(--mut);padding:4px 0}
+.ln.tot{color:var(--txt);font-family:Archivo;font-weight:800;font-size:20px;padding-top:10px}
+.badge{position:absolute;top:-4px;right:-4px;background:#e11;color:#fff;font-size:10px;font-weight:800;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center;padding:0 4px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--card);border:1px solid var(--or);border-left:4px solid var(--or);border-radius:12px;padding:13px 18px;font-size:13.5px;font-weight:600;z-index:120;opacity:0;transition:.25s;box-shadow:0 14px 40px rgba(0,0,0,.6)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.specs{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:44px 0}
+.sgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.sgrid div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px}
+.sgrid h5{font-size:12px;color:var(--or2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.sgrid li{list-style:none;font-size:12px;color:var(--mut);padding:3px 0;display:flex;justify-content:space-between;gap:8px}
+.sw{display:flex;gap:6px;margin-top:8px}
+.sw i{width:26px;height:26px;border-radius:7px;border:1px solid var(--line)}
+.cat.act,.pc.hide{}
+aside a.act{border-color:var(--or);background:linear-gradient(180deg,#3a2810,#20160a);color:#fff}
+.empty{text-align:center;color:var(--mut);font-size:13px;padding:40px 0}
+@media(max-width:900px){.mb{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr 1fr}}
+</style>`);
+
+/* ---------- DADOS ---------- */
+const g=(a,b,c)=>`linear-gradient(145deg,${a},${b} 55%,${c})`;
+const P=(n,c,pr,old,d,plat,cat)=>({n,art:g(...c),pr,old,d,plat,cat});
+const DATA=[
+ P('Grand Theft Auto VI',['#5b3bff','#c02fa8','#ff9d4d'],249.99,449.50,'-44%','PLAYSTATION','ps'),
+ P('Marvel Wolverine',['#ffd000','#ff8a00','#7a3a00'],179.99,399.99,'-55%','PLAYSTATION','ps'),
+ P('EA Sports FC 27',['#2b6cff','#123a8a','#0a1530'],149.90,299.90,'-50%','PLAYSTATION','ps'),
+ P('FC 27 Ultimate Edition',['#22252c','#34384a','#0b0c10'],239.90,399.90,'-40%','PLAYSTATION','ps'),
+ P('Silent Hill f',['#7a1020','#2a0a14','#0a0a12'],119.90,249.90,'-52%','PLAYSTATION','ps'),
+ P('Phantom Blade Zero',['#93a3ad','#4a5560','#1a1f26'],109.90,219.90,'-50%','PLAYSTATION','ps'),
+ P('The Blood of Dawnwalker',['#ff5a1f','#a11800','#2a0500'],179.90,299.90,'-40%','PLAYSTATION','ps'),
+ P('Onimusha: Way of the Sword',['#1f6fae','#0d3557','#06121f'],139.90,249.90,'-44%','PLAYSTATION','ps'),
+ P('A Plague Tale: Resonance',['#c9a24a','#6b4a1c','#1d1508'],139.90,229.90,'-39%','PLAYSTATION','ps'),
+ P('Halloween: The Game',['#2b5f8a','#123049','#05080d'],129.90,199.90,'-35%','PLAYSTATION','ps'),
+ P('Phantom Blade Zero Deluxe',['#8fa0aa','#44505b','#161b21'],99.90,189.90,'-47%','STEAM','st'),
+ P('NBA 2K27',['#1f4fd8','#c01020','#0a0f22'],119.90,249.90,'-52%','STEAM','st'),
+ P('Silent Hill f — PC',['#6e1220','#280812','#07070d'],109.90,219.90,'-50%','STEAM','st'),
+ P('Control 2',['#e07a3a','#8a3a12','#1f0d05'],89.90,179.90,'-50%','STEAM','st'),
+ P('Onimusha WOTS — PC',['#2a6fa8','#123a5c','#071420'],129.90,229.90,'-43%','STEAM','st'),
+ P('Gift Card R$ 100',['#ff9d3d','#c25200','#2a1405'],92.90,100.00,'-7%','GIFT CARD','gc'),
+ P('PS Plus Extra — 12 meses',['#2b6cff','#0f3a9a','#071230'],279.90,399.90,'-30%','GIFT CARD','gc'),
+ P('Game Pass Ultimate — 1 mês',['#1aa01a','#0a5c0a','#031203'],44.90,79.90,'-44%','GIFT CARD','gc'),
+ P('Nintendo Switch Online',['#d81f26','#7a0f14','#1a0305'],54.90,99.90,'-45%','GIFT CARD','gc'),
+ P('Streaming Premium 30 dias',['#8a2be2','#3a0d6b','#0f0418'],19.90,39.90,'-50%','GIFT CARD','gc'),
+ P('Forza Horizon 5',['#ef4d23','#6b1f68','#162154'],129.90,249.90,'-48%','XBOX','xb'),
+ P('Halo Infinite',['#2f7d54','#163528','#081713'],89.90,179.90,'-50%','XBOX','xb'),
+ P('Starfield',['#d9cba3','#56677b','#131b28'],119.90,239.90,'-50%','XBOX','xb'),
+ P('Gears 5',['#c63228','#5e1515','#150707'],79.90,159.90,'-50%','XBOX','xb'),
+ P('Minecraft Legends',['#4caf50','#176b35','#082515'],69.90,139.90,'-50%','XBOX','xb'),
+ P('Super Mario Bros. Wonder',['#e8322b','#2c91db','#ffd548'],189.90,299.90,'-37%','NINTENDO SWITCH','nt'),
+ P('The Legend of Zelda: TOTK',['#d5b35d','#416a65','#132927'],229.90,349.90,'-34%','NINTENDO SWITCH','nt'),
+ P('Mario Kart 8 Deluxe',['#f04f26','#286ac0','#ffd33d'],199.90,299.90,'-33%','NINTENDO SWITCH','nt'),
+ P('Pokémon Legends Z-A',['#57b99f','#7459ae','#20283d'],219.90,349.90,'-37%','NINTENDO SWITCH','nt'),
+ P('Metroid Prime 4',['#e15724','#244b59','#08171d'],189.90,299.90,'-37%','NINTENDO SWITCH','nt'),
+ P('Netflix Premium — 30 dias',['#e50914','#5b080d','#160204'],39.90,55.90,'-29%','STREAMING','sr'),
+ P('Disney+ Premium — 30 dias',['#196bd8','#102f73','#050c27'],27.90,43.90,'-36%','STREAMING','sr'),
+ P('Max — 30 dias',['#6f3bf5','#2d126b','#0d061f'],24.90,39.90,'-38%','STREAMING','sr'),
+ P('Spotify Premium — 3 meses',['#1db954','#0e5c2b','#041b0d'],49.90,69.90,'-29%','STREAMING','sr'),
+ P('Prime Video — 30 dias',['#20a8e0','#0a4e78','#031727'],14.90,24.90,'-40%','STREAMING','sr')];
+const BRL=v=>'R$ '+v.toFixed(2).replace('.',',');
+const EDS=[['Standard Edition',1],['Deluxe Edition',1.25],['Ultimate Edition',1.6]];
+
+/* ---------- HERO ---------- */
+const HERO_IMAGES=["/__l5e/assets-v1/edb287d6-f368-45b0-b2d6-6ded377cdaa9/gta-6-extended-look-predictions-jason-lucia.jpg", "/__l5e/assets-v1/494fca11-adcf-44c7-b04c-8c26ed94e9a2/marvels-wolverine-hero-desktop-01-en-30sep25.webp", "/__l5e/assets-v1/ab1154e9-30fa-43eb-a2cc-f66ae6588769/ea-sports-fc-27.avif"];
+document.getElementById('hero').innerHTML=DATA.slice(0,3).map((b,i)=>`<div class="bn" data-i="${i}">
+ <div class="art" style="background-image:url('${HERO_IMAGES[i]}')"></div><span class="tag">🎮 ${b.plat}</span>
+ <div style="position:absolute;z-index:3;left:18px;top:46px;font-family:Archivo;font-weight:900;font-size:26px;max-width:62%;line-height:1.05;text-shadow:0 4px 18px #000">${b.n}</div>
+ <div class="pr"><s class="old">${BRL(b.old)}</s>${i==1?`<span class="buy">🛒 ${BRL(b.pr)}</span>`:`<span class="new">${BRL(b.pr)}</span>`}</div></div>`).join('');
+
+/* ---------- GRIDS ---------- */
+const card=p=>`<div class="pc ${p.cat=='st'?'stm':''}" data-i="${DATA.indexOf(p)}" data-n="${p.n.toLowerCase()}">
+ <div class="plat">${p.cat=='st'?'💨':p.cat=='gc'?'🎁':p.cat=='xb'?'🟢':p.cat=='nt'?'🔴':p.cat=='sr'?'📺':'🎮'} ${p.plat}</div>
+ <div class="art" style="background:${p.art}"><span class="disc">${p.d}</span><b>${p.n}</b></div>
+ <div class="ft"><div class="v"><s>${BRL(p.old)}</s>${BRL(p.pr)}</div><div class="add" title="Adicionar ao carrinho">+</div></div></div>`;
+const draw=(f='')=>{
+ const q=f.toLowerCase();
+ [['g1','ps'],['g2','st'],['g3','gc'],['g4','xb'],['g5','nt'],['g6','sr']].forEach(([id,c])=>{
+  const l=DATA.filter(p=>p.cat==c&&p.n.toLowerCase().includes(q));
+  document.getElementById(id).innerHTML=l.length?l.map(card).join(''):'<div class="empty" style="grid-column:1/-1">Nenhum produto encontrado.</div>';
+ });};
+draw();
+
+/* ---------- TOAST ---------- */
+const tEl=document.createElement('div');tEl.className='toast';document.body.appendChild(tEl);let tT;
+const toast=m=>{tEl.textContent=m;tEl.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>tEl.classList.remove('on'),2200)};
+
+/* ---------- OVERLAY + MODAL + DRAWER ---------- */
+document.body.insertAdjacentHTML('beforeend',`<div class="ov"></div>
+<div class="mdl"><button class="x">✕</button><div class="mb" id="mb"></div></div>
+<div class="dw"><button class="x">✕</button><header>🛒 Seu carrinho</header><div class="body" id="cb"></div><footer id="cf"></footer></div>`);
+const ov=document.querySelector('.ov'),mdl=document.querySelector('.mdl'),dw=document.querySelector('.dw');
+const closeAll=()=>{ov.classList.remove('on');mdl.classList.remove('on');dw.classList.remove('on')};
+ov.onclick=closeAll;document.querySelectorAll('.x').forEach(b=>b.onclick=closeAll);
+addEventListener('keydown',e=>e.key=='Escape'&&closeAll());
+
+/* ---------- PÁGINA DE PRODUTO ---------- */
+let cur=0,ed=0;
+function paint(){const p=DATA[cur],[nm,mult]=EDS[ed];const pr=p.pr*mult,old=p.old*mult;
+ document.getElementById('mb').innerHTML=`<div>
+  <div class="shot" style="background:${p.art}">${p.n}<span style="position:absolute;bottom:12px;left:14px;font:600 12px Inter;color:#fff;opacity:.85">▶ Assistir trailer oficial</span></div>
+  <div class="thumbs">${[0,1,2,3,4,5].map(i=>`<div class="${i==0?'sel':''}" style="background:${p.art};filter:hue-rotate(${i*18}deg)"></div>`).join('')}</div>
+  <div class="box" style="margin-top:16px"><h4>Sobre este jogo</h4>
+   <p style="font-size:13px;color:var(--mut);line-height:1.7">${p.n} — ${nm} para ${p.plat}. Mídia digital original com ativação vinculada à sua conta. Inclui todos os bônus de pré-venda, itens cosméticos e acesso antecipado quando disponível na edição escolhida. Idioma: Português (BR), Inglês, Espanhol. Modos: Campanha e Online.</p></div></div>
+ <div>
+  <h3 style="font-size:20px;line-height:1.25;margin-bottom:14px">${p.n} — ${p.plat} — Mídia Digital</h3>
+  <div class="box"><h4>Selecione uma edição</h4>
+   <select id="ed">${EDS.map((e,i)=>`<option value="${i}" ${i==ed?'selected':''}>${e[0]}</option>`).join('')}</select>
+   <div style="margin-top:14px"><span class="pill">${p.d}</span><s style="color:var(--mut);font-size:13px">${BRL(old)}</s>
+   <div class="pbig" style="color:var(--or2)">${BRL(pr)}</div></div>
+   <button class="btn pri" id="addm" style="width:100%;height:50px;justify-content:center;margin-top:14px">Adicionar ao carrinho</button>
+   <p style="font-size:11.5px;color:var(--mut);margin-top:10px">Disponibilidade — <b style="color:var(--or2)">imediata</b> · Entrega automática por e-mail</p></div>
+  <div class="box"><h4>🎁 Compre mais pagando menos</h4>
+   <span class="pill">2 itens 5% OFF</span><span class="pill">3 itens 10% OFF</span><span class="pill">4 itens 15% OFF</span><span class="pill">5 itens 20% OFF</span></div>
+  <div class="box"><h4>❓ Perguntas frequentes</h4>
+   ${[['Como recebo meu jogo?','Após o pagamento, enviamos o código ou os dados de ativação por e-mail em até 5 minutos.'],['É original e permanente?','Sim. A licença é definitiva e vinculada à sua conta, sem prazo de expiração.'],['Posso jogar offline?','Sim, na edição digital primária. Na secundária o modo online exige conta principal.'],['E se der algum problema?','Suporte no chat todos os dias, com reembolso integral em até 7 dias.']].map(([q,a])=>`<div class="acc"><button>${q}<span>+</span></button><p>${a}</p></div>`).join('')}</div></div>`;
+ document.getElementById('ed').onchange=e=>{ed=+e.target.value;paint()};
+ document.getElementById('addm').onclick=()=>add(cur,nm,pr);
+ document.querySelectorAll('.mdl .acc button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+ document.querySelectorAll('.thumbs div').forEach((t,i)=>t.onclick=()=>{document.querySelectorAll('.thumbs div').forEach(x=>x.classList.remove('sel'));t.classList.add('sel')});
+}
+const open=i=>{cur=i;ed=0;paint();ov.classList.add('on');mdl.classList.add('on')};
+
+/* ---------- CARRINHO ---------- */
+let cart=[];
+const disc=n=>n>=5?.2:n>=4?.15:n>=3?.1:n>=2?.05:0;
+function add(i,nm,pr){const k=DATA[i].n+' · '+(nm||'Standard Edition');
+ const f=cart.find(c=>c.k==k);f?f.q++:cart.push({k,i,q:1,pr:pr||DATA[i].pr});renderCart();toast('✓ Adicionado ao carrinho: '+DATA[i].n)}
+function renderCart(){
+ const n=cart.reduce((a,c)=>a+c.q,0),sub=cart.reduce((a,c)=>a+c.q*c.pr,0),d=disc(n);
+ document.getElementById('cb').innerHTML=cart.length?cart.map((c,x)=>`<div class="ci"><div class="th" style="background:${DATA[c.i].art}"></div>
+  <div><b>${DATA[c.i].n}</b><small>${c.k.split(' · ')[1]} · ${BRL(c.pr)}</small></div>
+  <div class="qt"><button data-m="${x}">−</button><b>${c.q}</b><button data-p="${x}">+</button></div></div>`).join(''):'<div class="empty">Seu carrinho está vazio.<br>Explore a loja e aproveite os descontos progressivos.</div>';
+ document.getElementById('cf').innerHTML=`<div class="ln"><span>Subtotal (${n} ${n==1?'item':'itens'})</span><b>${BRL(sub)}</b></div>
+  <div class="ln"><span>Desconto progressivo</span><b style="color:var(--or2)">−${(d*100).toFixed(0)}% (${BRL(sub*d)})</b></div>
+  <div class="ln"><span>Pix</span><b style="color:var(--or2)">−5%</b></div>
+  <div class="ln tot"><span>Total</span><span>${BRL(sub*(1-d)*.95)}</span></div>
+  <button class="btn pri" style="width:100%;height:50px;justify-content:center;margin-top:14px" onclick="alert('Checkout de demonstração — integre aqui seu gateway (Pix / cartão / boleto).')">Finalizar compra</button>`;
+ document.querySelectorAll('.qt button').forEach(b=>b.onclick=()=>{
+  const m=b.dataset.m,p=b.dataset.p;
+  if(p!=null)cart[p].q++;else{cart[m].q--;if(cart[m].q<1)cart.splice(m,1)}renderCart()});
+ const cb=document.querySelector('.btn.pri');cb.style.position='relative';
+ cb.querySelector('.badge')?.remove();
+ if(n)cb.insertAdjacentHTML('beforeend',`<span class="badge">${n}</span>`);
+}
+renderCart();
+document.querySelectorAll('.acts .btn.pri')[0].onclick=()=>{ov.classList.add('on');dw.classList.add('on')};
+document.querySelectorAll('.acts .btn')[0].onclick=()=>toast('Área do cliente — conecte seu login aqui.');
+
+/* ---------- CLIQUES GLOBAIS ---------- */
+document.addEventListener('click',e=>{
+ const a=e.target.closest('.add');if(a){e.stopPropagation();add(+a.closest('.pc').dataset.i);return}
+ const c=e.target.closest('.pc,.bn');if(c)open(+c.dataset.i);
+});
+/* filtros */
+const sectionByCat={ps:'g1',st:'g2',gc:'g3',xb:'g4',nt:'g5',sr:'g6'};
+const goCat=cat=>{const id=sectionByCat[cat];if(id)document.getElementById(id).previousElementSibling.scrollIntoView({behavior:'smooth',block:'center'});else document.getElementById('hero').scrollIntoView({behavior:'smooth'})};
+document.querySelectorAll('.cat').forEach(b=>b.onclick=()=>goCat(b.dataset.cat));
+document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>{document.querySelectorAll('nav a').forEach(x=>x.classList.remove('on'));a.classList.add('on');goCat(a.dataset.cat)});
+document.querySelectorAll('aside a').forEach(a=>a.onclick=()=>{
+ document.querySelectorAll('aside a').forEach(x=>x.classList.remove('act'));a.classList.add('act');
+ const t=a.textContent,cat=t.includes('Xbox')?'xb':t.includes('Nintendo')?'nt':t.includes('Steam')?'st':t.includes('Stream')?'sr':t.includes('Assinatura')||t.includes('Sorteio')?'gc':'ps';goCat(cat)});
+/* busca */
+const inp=document.querySelector('.search input');
+inp.addEventListener('input',e=>draw(e.target.value));
+document.querySelectorAll('.more').forEach(m=>m.onclick=()=>m.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth',block:'start'}));
+document.querySelector('.burger').onclick=()=>openDrawer();
+document.getElementById('dclose').onclick=()=>closeDrawer();
+document.getElementById('ov').onclick=()=>closeDrawer();
+const dEl=document.getElementById('drawer'),dOv=document.getElementById('ov');
+function openDrawer(){dEl.classList.add('open');dOv.classList.add('open')}
+function closeDrawer(){dEl.classList.remove('open');dOv.classList.remove('open')}
+document.querySelectorAll('.dcats a').forEach(a=>a.onclick=()=>{closeDrawer();goCat(a.dataset.cat)});
+document.querySelectorAll('.dqa a').forEach(a=>a.onclick=()=>{closeDrawer();const g=a.dataset.go;if(g==='top')scrollTo({top:0,behavior:'smooth'});else if(g==='cart')toast('Abrindo carrinho...');else toast('Entrar / Criar conta')});
+document.querySelector('.chat').onclick=()=>toast('💬 Suporte GROUD: das 9h à meia-noite, todos os dias.');
+document.querySelectorAll('.logo').forEach(l=>l.onclick=()=>scrollTo({top:0,behavior:'smooth'}));
+document.addEventListener('click',e=>{const s=document.getElementById('sup');const b=document.getElementById('supBtn');if(!s)return;if(b&&b.contains(e.target)){s.classList.toggle('open');b.classList.toggle('on');return}if(!s.contains(e.target)){s.classList.remove('open');b&&b.classList.remove('on')}});
+document.querySelectorAll('.strip .f').forEach(f=>f.onclick=()=>toast(f.querySelector('h4').textContent+': '+f.querySelector('p').textContent));
+document.querySelectorAll('footer li').forEach(li=>li.onclick=()=>{const t=li.textContent;if(t.includes('Xbox'))goCat('xb');else if(t.includes('Nintendo'))goCat('nt');else if(t.includes('Steam'))goCat('st');else if(t.includes('Gift'))goCat('gc');else if(t.includes('PS5'))goCat('ps');else toast(t)});
+document.querySelectorAll('.cp span').forEach(x=>x.onclick=()=>toast(x.textContent));
+
+/* ---------- AVALIACOES ---------- */
+document.head.insertAdjacentHTML('beforeend',`<style>
+.rev{margin:54px 0 10px}
+.rev .hd{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.rev h2{font-size:26px;display:flex;align-items:center;gap:10px}
+.score{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px}
+.score b{font-family:Archivo;font-weight:900;font-size:32px;color:var(--or2);line-height:1}
+.score small{display:block;font-size:11.5px;color:var(--mut)}
+.track{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.track+.track{margin-top:16px}
+.run{display:flex;gap:16px;width:max-content;animation:sl 64s linear infinite}
+.run.rev2{animation-direction:reverse;animation-duration:74s}
+.track:hover .run{animation-play-state:paused}
+@keyframes sl{to{transform:translateX(-50%)}}
+.rv{width:340px;flex-shrink:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;transition:.2s}
+.rv:hover{border-color:var(--or);transform:translateY(-3px)}
+.rv .tp{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:Archivo;font-weight:900;font-size:15px;color:#14100a;flex-shrink:0}
+.rv b{font-size:13.5px;display:block}
+.st{font-size:11px;letter-spacing:1px;color:#ffb300}
+.rv p{font-size:12.8px;color:var(--mut);line-height:1.6}
+.vf{margin-left:auto;font-size:10px;font-weight:700;color:#3ddc84;border:1px solid #1e5c3a;background:rgba(61,220,132,.1);padding:3px 7px;border-radius:6px;white-space:nowrap}
+@media(max-width:620px){.rv{width:270px}.rev h2{font-size:20px}}
+</style>`);
+const REVS=[["João Victor Almeida","Atendimento muito bom, compra rápida e o jogo chegou certinho. Recomendo demais!"],
+["Lucas Gabriel Souza","Gostei bastante da experiência. Tudo explicado direitinho e sem complicação."],
+["Matheus Henrique Lima","Preço bom e atendimento rápido. Com certeza vou comprar novamente."],
+["Rafael Oliveira Santos","Excelente loja! Fui atendido muito bem e consegui tirar todas as minhas dúvidas."],
+["Pedro Lucas Ferreira","Compra tranquila e processo bem explicado. Recomendo para quem procura jogos digitais."],
+["Gabriel Martins Costa","Muito satisfeito com a compra. Atendimento rápido e suporte muito bom."],
+["André Luiz Rodrigues","Gostei bastante. O atendimento foi rápido e resolveram tudo pelo WhatsApp."],
+["Felipe Augusto Silva","Ótima experiência. Preço acessível e atendimento muito atencioso."],
+["Bruno Henrique Carvalho","Primeira compra na loja e fiquei muito satisfeito. Voltarei a comprar."],
+["Caio Vinícius Mendes","Loja organizada, atendimento excelente e processo simples. Recomendo!"],
+["Gustavo Henrique Rocha","Gostei muito da atenção durante a compra. Tudo explicado passo a passo."],
+["Daniel Ferreira Alves","Experiência muito boa. Atendimento rápido e suporte eficiente."],
+["Thiago Gabriel Nunes","Comprei meu jogo e deu tudo certo. Atendimento nota 10!"],
+["Victor Hugo Barbosa","Muito bom! Responderam rápido e me ajudaram durante todo o processo."],
+["Eduardo Martins Ribeiro","Gostei dos preços e principalmente do atendimento. Recomendo a loja."],
+["Wesley Santos Oliveira","Compra fácil e atendimento muito bom. Com certeza vou voltar."],
+["Diego Rafael Gomes","Excelente experiência para quem gosta de jogos. Tudo bem explicado."],
+["Samuel Lucas Pereira","Gostei bastante da loja. Atendimento rápido, educado e eficiente."],
+["Alexandre Costa Martins","Fiquei satisfeito com a compra. Suporte respondeu minhas dúvidas rapidamente."],
+["Marcos Vinícius Santos","Ótimo atendimento e experiência de compra. Já estou de olho no próximo jogo!"]];
+const HUE=["#ffab3d","#ff7a00","#ff9d4d","#e06a10","#ffc061"];
+const rv=([n,t],i)=>`<div class="rv"><div class="tp"><div class="av" style="background:linear-gradient(140deg,${HUE[i%5]},#c25200)">${n.split(" ")[0][0]}${n.split(" ").pop()[0]}</div>
+ <div><b>${n}</b><span class="st">★★★★★</span></div><span class="vf">✓ Compra verificada</span></div><p>“${t}”</p></div>`;
+const A=REVS.slice(0,10).map(rv).join(''),B=REVS.slice(10).map((r,i)=>rv(r,i+10)).join('');
+document.querySelector('main').insertAdjacentHTML('beforeend',`<section class="rev">
+ <div class="hd"><h2>🎮 Avaliações de clientes</h2>
+  <div class="score"><div><b>5,0</b></div><div><span class="st">★★★★★</span><small>Baseado em 2220 avaliações verificadas</small></div></div></div>
+ <div class="track"><div class="run">${A+A}</div></div>
+ <div class="track"><div class="run rev2">${B+B}</div></div>
+</section>`);
+</script>
+</body>
+</html>
